@@ -65,22 +65,22 @@
           <ion-list class="notes-list" lines="none">
             <ion-item class="custom-input">
               <ion-label position="stacked">Kekuatan / Kelebihan</ion-label>
-              <ion-textarea v-model="generalNotes.strength_note" @ionChange="triggerAutoSave" auto-grow rows="2" placeholder="Catat hal positif yang ditemukan..."></ion-textarea>
+              <ion-textarea v-model="generalNotes.strength_note" @ionChange="triggerAutoSave" auto-grow :rows="2" placeholder="Catat hal positif yang ditemukan..."></ion-textarea>
             </ion-item>
             
             <ion-item class="custom-input">
               <ion-label position="stacked">Area Peningkatan</ion-label>
-              <ion-textarea v-model="generalNotes.improvement_note" @ionChange="triggerAutoSave" auto-grow rows="2" placeholder="Catat hal yang perlu ditingkatkan..."></ion-textarea>
+              <ion-textarea v-model="generalNotes.improvement_note" @ionChange="triggerAutoSave" auto-grow :rows="2" placeholder="Catat hal yang perlu ditingkatkan..."></ion-textarea>
             </ion-item>
 
             <ion-item class="custom-input">
               <ion-label position="stacked">Rekomendasi</ion-label>
-              <ion-textarea v-model="generalNotes.recommendation_note" @ionChange="triggerAutoSave" auto-grow rows="2" placeholder="Saran perbaikan..."></ion-textarea>
+              <ion-textarea v-model="generalNotes.recommendation_note" @ionChange="triggerAutoSave" auto-grow :rows="2" placeholder="Saran perbaikan..."></ion-textarea>
             </ion-item>
             
             <ion-item class="custom-input">
               <ion-label position="stacked">Kesimpulan</ion-label>
-              <ion-textarea v-model="generalNotes.conclusion_note" @ionChange="triggerAutoSave" auto-grow rows="2" placeholder="Kesimpulan akhir supervisi..."></ion-textarea>
+              <ion-textarea v-model="generalNotes.conclusion_note" @ionChange="triggerAutoSave" auto-grow :rows="2" placeholder="Kesimpulan akhir supervisi..."></ion-textarea>
             </ion-item>
           </ion-list>
         </div>

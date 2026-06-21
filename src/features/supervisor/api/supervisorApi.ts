@@ -29,7 +29,10 @@ export interface SupervisionResponse {
   recommendationNote: string | null;
   conclusionNote: string | null;
   documentationUrl?: string | null;
+  submittedAt?: string | null;
   teacher?: { name: string; nip: string; photo: string | null };
+  supervisor?: { name: string; nip: string; photo: string | null };
+  period?: { id: string; name: string };
   subject?: { name: string };
   classroom?: { name: string };
   instruments?: { id: string; name: string }[];

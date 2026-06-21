@@ -29,7 +29,7 @@
             @ionInput="updateNote($event.target.value)"
             placeholder="Berikan alasan atau catatan..."
             auto-grow
-            rows="2"
+            :rows="2"
           ></ion-textarea>
         </ion-item>
         <p v-if="showNoteError" class="error-text">Catatan wajib diisi untuk nilai <= {{ lowScoreThreshold }}</p>
@@ -42,7 +42,7 @@
             @ionInput="updateNote($event.target.value)"
             placeholder="Tambahkan catatan jika perlu..."
             auto-grow
-            rows="1"
+            :rows="1"
           ></ion-textarea>
         </ion-item>
       </div>

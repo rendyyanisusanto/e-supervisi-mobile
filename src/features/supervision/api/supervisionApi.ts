@@ -52,7 +52,7 @@ export interface SupervisionDetail {
   submittedAt: string | null;
   
   period?: { id: string; name: string };
-  teacher?: { id: string; name: string; nip: string; photo: string | null };
+  teacher?: { id: string; name: string; nip: string; photo: string | null; nuptk?: string; mainSubjectName?: string; };
   supervisor?: { id: string; name: string; nip: string; photo: string | null };
   subject?: { id: string; name: string };
   classroom?: { id: string; name: string };

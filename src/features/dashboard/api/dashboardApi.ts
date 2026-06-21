@@ -35,6 +35,13 @@ export interface Notification {
   created_at: string;
 }
 
+export interface Announcement {
+  id: string;
+  title: string;
+  summary: string;
+  created_at: string;
+}
+
 export class DashboardApi {
   static async getDashboard(): Promise<DashboardResponse> {
     const response = await apiClient.get<ApiResponse<DashboardResponse>>('/dashboard');
