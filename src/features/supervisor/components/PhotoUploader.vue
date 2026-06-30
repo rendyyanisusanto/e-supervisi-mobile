@@ -24,6 +24,7 @@ import { ref, watch } from 'vue';
 import { IonButton, IonIcon, actionSheetController } from '@ionic/vue';
 import { cameraOutline, closeCircle, imageOutline } from 'ionicons/icons';
 import { Camera, CameraResultType, CameraSource } from '@capacitor/camera';
+import { getImageUrl } from '@/core/api/axios';
 
 const props = defineProps<{
   initialUrl?: string | null;
@@ -38,7 +39,7 @@ const previewUrl = ref<string | null>(props.initialUrl || null);
 
 watch(() => props.initialUrl, (newUrl) => {
   if (newUrl && !newUrl.startsWith('blob:')) {
-    previewUrl.value = `http://localhost:3000${newUrl}`;
+    previewUrl.value = getImageUrl(newUrl);
   }
 });
 

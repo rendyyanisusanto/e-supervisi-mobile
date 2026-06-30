@@ -13,3 +13,12 @@ export const apiClient = axios.create({
 
 // Apply interceptors
 setupInterceptors(apiClient);
+
+export const getImageUrl = (path: string | null | undefined) => {
+  if (!path) return '';
+  if (path.startsWith('http')) return path;
+  
+  // Extract base URL from API URL (e.g. http://localhost:5000/api -> http://localhost:5000)
+  const base = baseURL.replace(/\/api(\/v1)?\/?$/, '');
+  return `${base}${path.startsWith('/') ? '' : '/'}${path}`;
+};

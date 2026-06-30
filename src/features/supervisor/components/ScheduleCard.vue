@@ -58,6 +58,7 @@ import { computed } from 'vue';
 import { IonSkeletonText, IonBadge, IonIcon, IonAvatar } from '@ionic/vue';
 import { calendarOutline, timeOutline, locationOutline } from 'ionicons/icons';
 import { SupervisionResponse } from '../api/supervisorApi';
+import { getImageUrl } from '@/core/api/axios';
 
 const props = defineProps<{
   schedule?: SupervisionResponse;
@@ -82,7 +83,7 @@ const statusColor = computed(() => {
 
 const teacherAvatar = computed(() => {
   if (props.schedule?.teacher?.photo) {
-    return `http://localhost:3000${props.schedule.teacher.photo}`;
+    return getImageUrl(props.schedule.teacher.photo);
   }
   return `https://ui-avatars.com/api/?name=${encodeURIComponent(props.schedule?.teacher?.name || 'Guru')}&background=random`;
 });

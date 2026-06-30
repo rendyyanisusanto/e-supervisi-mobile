@@ -155,6 +155,7 @@ import {
 } from 'ionicons/icons';
 import { useSupervisorStore } from '../stores/supervisorStore';
 import { SupervisionResponse } from '../api/supervisorApi';
+import { getImageUrl } from '@/core/api/axios';
 
 import AppHeader from '@/components/layout/AppHeader.vue';
 import AppSkeleton from '@/components/common/AppSkeleton.vue';
@@ -182,7 +183,7 @@ onIonViewWillEnter(() => {
 
 const teacherAvatar = computed(() => {
   if (schedule.value?.teacher?.photo) {
-    return `http://localhost:3000${schedule.value.teacher.photo}`;
+    return getImageUrl(schedule.value.teacher.photo);
   }
   return '/images.png';
 });

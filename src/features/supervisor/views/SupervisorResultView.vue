@@ -45,7 +45,7 @@
         <div v-if="schedule.documentationUrl" class="info-card">
           <h3>Dokumentasi</h3>
           <div class="photo-container">
-            <img :src="`http://localhost:3000${schedule.documentationUrl}`" alt="Dokumentasi" class="documentation-photo"/>
+            <img :src="getImageUrl(schedule.documentationUrl)" alt="Dokumentasi" class="documentation-photo"/>
           </div>
         </div>
 
@@ -120,6 +120,7 @@ import {
 import { thumbsUpOutline, trendingUpOutline, bulbOutline, flagOutline } from 'ionicons/icons';
 import { useSupervisorStore } from '../stores/supervisorStore';
 import { SupervisionResponse } from '../api/supervisorApi';
+import { getImageUrl } from '@/core/api/axios';
 
 const route = useRoute();
 const router = useRouter();

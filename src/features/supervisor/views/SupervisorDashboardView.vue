@@ -136,6 +136,7 @@ import { useSupervisorStore } from '../stores/supervisorStore';
 import { useDashboardStore } from '@/features/dashboard/stores/dashboardStore';
 import ScheduleCard from '../components/ScheduleCard.vue';
 import { SupervisionResponse } from '../api/supervisorApi';
+import { getImageUrl } from '@/core/api/axios';
 
 const router = useRouter();
 const authStore = useAuthStore();
@@ -148,7 +149,7 @@ const unreadCount = computed(() => {
 
 const userAvatar = computed(() => {
   if (authStore.user?.photo) {
-    return `http://localhost:3000${authStore.user.photo}`;
+    return getImageUrl(authStore.user.photo);
   }
   return `https://ui-avatars.com/api/?name=${encodeURIComponent(authStore.user?.name || 'User')}&background=random`;
 });
