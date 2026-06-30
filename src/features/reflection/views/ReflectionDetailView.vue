@@ -146,7 +146,8 @@ onMounted(() => {
 });
 
 const isTeacher = computed(() => {
-  return authStore.user?.id === store.selectedSupervision?.teacher?.id;
+  if (!authStore.user?.teacher_id || !store.selectedSupervision?.teacher?.id) return false;
+  return String(authStore.user.teacher_id) === String(store.selectedSupervision.teacher.id);
 });
 
 const reflectionStatus = computed(() => store.selectedReflection?.status || 'BELUM_DIISI');
