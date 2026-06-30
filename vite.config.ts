@@ -12,6 +12,9 @@ export default defineConfig({
     vue(),
     tailwindcss(),
   ],
+  build: {
+    target: 'esnext'
+  },
   resolve: {
     alias: {
       '@': path.resolve(__dirname, './src'),
